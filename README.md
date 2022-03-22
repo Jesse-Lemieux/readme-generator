@@ -19,7 +19,7 @@
 
 ## Testing
   I included a video in the assets folder of me operating the app. You can see there how to run the app, and how it functions. Based off of that video you can see where and what to add to the line of questions. I also included a link to the video on google drive here vvv
-  https://drive.google.com/file/d/1B5f0MFis1kjTiOximtXpXR8hRHRiy1iN/view
+  https://drive.google.com/file/d/1F5WqTj0gSRqNzxYuh-2XPaDysKZuW99f/view
 
 
 ## Questions
