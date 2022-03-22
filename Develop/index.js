@@ -115,8 +115,8 @@ ${test}
 
 ## Questions
 Contact me at:
-My Github: ${git}
-Email: ${email}`;
+* My Github: https://github.com/${git}
+* Email: ${email}`;
 //call for function to create the file
 createNewFile(title, template);
 }
