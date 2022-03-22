@@ -1,4 +1,4 @@
-`# Readme Generator
+# Readme Generator
 ## Table of Contents
 
 * [License](#license)
