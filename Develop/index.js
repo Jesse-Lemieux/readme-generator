@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 // TODO: Create an array of questions for user input
-const promptUser = () => {
+const promptUser = userData => {
     return inquirer.prompt([
     {
         type: 'input',
@@ -41,10 +41,8 @@ const promptUser = () => {
             return false;
           }
         }
-      },
+      }
 ])
-
-.then(answers =>{console.log(answers)})
 }
 
 // TODO: Create a function to write README file
@@ -52,8 +50,9 @@ const promptUser = () => {
 
 // TODO: Create a function to initialize app
 function init() {
-    promptUser();
-}
+    promptUser()
+    .then(userData =>{console.log(userData.github)
+})}
 
 // Function call to initialize app
 init();
