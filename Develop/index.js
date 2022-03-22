@@ -57,10 +57,10 @@ inquirer.prompt(
       type: 'list',
       message: "What license did you use?",
       name: 'lisc',
-      choices: ['MIT', 'GNU', 'Apache', 'ISC', 'N/A']
+      choices: ['MIT', 'GPL', 'Apache', 'ISC', 'N/A']
     }
   ]
-  
+  //establish answers for callback
 ).then(({
   title,
   desc,
@@ -71,19 +71,32 @@ inquirer.prompt(
   git,
   email,
   lisc,
-  liscLink
 })=>{
-  
+
+  //function to determine link to license badge
+function generateLiscLink(){
+  let liscLink = ''
+      if(lisc === 'MIT'){liscLink = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'; return liscLink}
+      else if(lisc === 'GPL'){liscLink = '[![License: GPL](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)'; return liscLink}
+      else if(lisc === 'Apache'){liscLink = '[![License: Apache](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)'; return liscLink}
+      else if(lisc === 'ISC'){liscLink = '[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)'; return liscLink}
+      else{liscLink = 'Unlicensed'; return liscLink}
+}
+  //readme template to be filled with answers
 const template = 
-`# ${title} [![License: ${lisc}](${generateLiscLink(lisc)})
+`# ${title}
 ## Table of Contents
 
+* [License](#license)
 * [Description](#description)
 * [Installation](#installation)
 * [Usage](#Usage)
 * [Contribution](#contribution)
 * [Testing](#testing)
 * [Questions](#questions)
+
+## License
+${generateLiscLink(lisc)}
 
 ## Description
 ${desc}
@@ -104,16 +117,11 @@ ${test}
 Contact me at:
 My Github: ${git}
 Email: ${email}`;
+//call for function to create the file
 createNewFile(title, template);
 }
 )
-function generateLiscLink(lisc){
-  if(lisc = 'MIT'){const liscLink = 'https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT'; return liscLink}
-      if(lisc = 'GNU'){const liscLink = 'https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0'; return liscLink}
-      if(lisc = 'Apache'){const liscLink = 'https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0'; return liscLink}
-      if(lisc = 'ISC'){const liscLink = 'https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC'; return liscLink}
-      else{}
-}
+//function to create file
 function createNewFile(fileName,data){
   fs.writeFile(`./dist/${fileName.toLowerCase().split(' ').join('')}.md`,data, (err)=>{
     if(err){
