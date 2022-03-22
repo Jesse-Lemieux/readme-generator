@@ -20,9 +20,10 @@
   This app runs on node, so to use it, the user must have npm and inquirer initiated on thier command line. After using the commands "npm init" and "npm i inquirer" the user then may enter "node index" on the command line in the "develop" envirnment (inside the develop directory) to then ne prompted with questions about thier project.
 
 ## Testing
+  I included a video in the assets folder of me operating the app. You can see there how to run the app, and how it functions. Based off of that video you can see where and what to add to the line of questions.
 
 
 ## Questions
 Contact me at:
-My Github:
-Email: 
+My Github: https://github.com/Jesse-Lemieux
+Email: dtrsjesse121@gmail.com
