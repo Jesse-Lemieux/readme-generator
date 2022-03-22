@@ -4,8 +4,6 @@
 * [License](#license)
 * [Description](#description)
 * [Installation](#installation)
-* [Usage](#Usage)
-* [Contribution](#contribution)
 * [Testing](#testing)
 * [Questions](#questions)
 
